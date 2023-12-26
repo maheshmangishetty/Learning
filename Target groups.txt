@@ -1,0 +1,17 @@
+
+--> In AWS (Amazon Web Services), "target groups" refer to a component of the Elastic Load Balancing service. Elastic Load Balancing helps distribute 
+incoming traffic across multiple resources, such as EC2 instances, containers, and IP addresses, to improve the availability and scalability of applications.
+
+--> A target group is a logical group of resources that receive traffic from a load balancer. It acts as a routing destination for requests and plays a 
+crucial role in determining where the load balancer should send the incoming traffic. The target group defines the set of registered targets 
+(such as EC2 instances) that can receive requests.
+
+--> When you create a target group, you specify a target type, which can be an instance, IP address, or Lambda function, depending on the load balancer type. 
+You can add or remove targets from the target group dynamically as your application scales up or down.
+
+--> Target groups are associated with a load balancer and allow you to balance the traffic across multiple targets based on various criteria, such as the 
+target's health, availability zone, or request type. They also support advanced features like request routing, path-based routing, and host-based routing, 
+which help direct traffic to different resources based on the incoming request's characteristics.
+
+--> In summary, target groups in AWS provide a way to organize and manage the resources that receive traffic from load balancers, enabling efficient 
+distribution and scalability of applications.

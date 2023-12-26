@@ -1,0 +1,212 @@
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, 
+and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, 
+such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features,
+/.you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements.
+ 
+
+---> Amazon S3 (Simple Storage Service) is a highly scalable and durable object storage service provided by Amazon Web Services (AWS). 
+It is designed to store and retrieve any amount of data, at any time, from anywhere on the web.
+
+---> S3 is used by businesses and individuals to store and protect data such as photos, videos, documents, application backups, and other types 
+     of unstructured data. It offers features such as versioning, lifecycle policies, access control, and encryption to ensure data security and 
+	 integrity.
+
+---> S3 is also widely used by developers and businesses as a cost-effective solution for storing and serving static website content, 
+     such as HTML, CSS, and JavaScript files, and media assets like images, videos, and audio files.
+
+---> Overall, S3 is a highly reliable and scalable storage service that provides businesses and individuals with an easy-to-use and 
+     cost-effective solution for storing and accessing their data.
+
+
+S3 Bucket
+---------
+S3 Buckets are public cloud storage containers for objects stored in simple storage service (S3). S3 buckets can be likened to 
+file folders and object storage.                                                           
+
+
+
+
+S3 Storage classes
+------------------
+
+Amazon S3 provides a range of storage classes, each designed to meet different performance, access, and cost requirements. 
+The current storage classes offered by Amazon S3 are:
+
+S3 Standard: This is the default storage class that provides high durability, availability, and performance for frequently accessed data. 
+It is suitable for storing primary data that requires low latency and high throughput.
+
+S3 Intelligent-Tiering: This storage class is designed for data with unknown or changing access patterns. It automatically moves objects
+between two access tiers: frequent access and infrequent access. This can help optimize costs by automatically moving data to the most 
+cost-effective tier without any performance impact.
+
+S3 Standard-Infrequent Access (S3 Standard-IA): This storage class is ideal for data that is accessed less frequently but still requires 
+high durability and availability. It offers lower storage costs compared to the S3 Standard class, with a retrieval fee for data access.
+
+S3 One Zone-Infrequent Access (S3 One Zone-IA): This storage class is similar to S3 Standard-IA, but it stores data in a single availability zone,
+making it less durable than the other classes.It is recommended for data that can be easily recreated in case of loss or can tolerate a brief downtime.
+
+S3 Glacier: This storage class is designed for data archiving and long-term backup, where data retrieval time can be in hours. 
+It provides very low storage costs and high durability but has a longer retrieval time and additional retrieval fees.
+
+S3 Glacier Deep Archive: This storage class is similar to S3 Glacier but is designed for data archiving where data retrieval time can be in days. 
+It provides the lowest storage cost but has the longest retrieval time and additional retrieval fees.
+
+By using these storage classes, users can optimize their storage costs and performance based on their data access patterns and business requirements. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+AWS S3 With AWS CLI
+
+1. BUCKET CREATION
+2. FILE UPLOAD
+3. FILE DOWNLOAD
+4. LIST BUCKETS
+5. LIST OBJECTS
+6. DELETE OBJECT
+7. DELETE BUCKET
+
+
+Prerequisites
+
+1. AWS CLI Setup
+2. IAM User with Access Keys
+
+
+COmmands
+
+1.aws configure - for credentials setup
+2. aws s3 mb s3://bucket-name
+3. aws s3 cp local_tite_path s3://bucket-name/object-name
+4. aws s3 cp s3://bucket-name/object-name local_file_path
+5. aws s3 ls
+6. aws s3 ls s3://bucket-name
+7. aws s3 rm s3://bucket-name/object_name
+8. aws s3 rm s3://bucket-name --force
+
+
+
+Example:
+
+aws s3 mb s3://testpb-bucket
+it will create a testpb-bucket bucket
+
+aws s3 ls
+we can see list of buckets
+
+aws s3 cp imp.txt s3://testpb-bucket
+it will upload a file named imp.txt to s3 bucket
+
+aws s3 cp s3://testpb-bucket/imp.txt  imp.txt
+it will downlaod a file from s3 bucket to the local path
+
+aws s3 rm s3://testpb-bucket/imp.txt
+it will remove the file from the bucket
+
+aws s3 rb s3://testpb-bucket 
+it will remove the bucket
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Python
+-------
+
+Python is a high-level, interpreted programming language that is known for its simplicity, readability, and versatility. 
+It was first released in 1991 by Guido van Rossum and has since become one of the most popular programming languages in the world.
+
+Python is widely used for a variety of applications, including web development, scientific computing, data analysis, artificial intelligence,
+machine learning, and automation. It has a large standard library and a vast ecosystem of third-party libraries and tools, 
+making it a popular choice for developers of all levels.
+
+Python's syntax is designed to be clear and concise, with a focus on readability and ease of use. Its dynamic nature and automatic
+memory management make it easy to write and maintain code. Python supports multiple programming paradigms, including object-oriented,
+functional, and procedural programming.
+
+Python has a strong community and is continuously evolving with new features and improvements. It is open source, meaning that its source code
+is freely available and can be modified and redistributed by anyone.
+
+Overall, Python is a powerful and flexible programming language that is widely used for a range of applications, from simple scripts to
+complex systems.
+
+
+Boto3
+------
+
+Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to easily integrate 
+their applications with AWS services. Boto3 provides an intuitive and easy-to-use interface to interact with AWS services from within Python code.
+
+Boto3 supports a wide range of AWS services, including Amazon S3, Amazon EC2, Amazon RDS, Amazon DynamoDB, Amazon SQS, and many others. 
+It enables developers to create, configure, and manage AWS resources programmatically, as well as perform other tasks such as managing security
+and access control, handling notifications, and managing events.
+
+With Boto3, developers can create AWS clients and resources using simple Python commands, allowing them to interact with AWS services 
+and resources in a more streamlined and intuitive way. Boto3 also includes support for AWS features such as pagination, automatic retries, 
+and object mapping, which help simplify the development process.
+
+Overall, Boto3 is a powerful tool for Python developers who want to integrate their applications with AWS services. It provides an easy-to-use
+interface, extensive documentation, and a large community of users and contributors.
+
+ 
+AWS S3 With Python Boto3
+
+1. BUCKET CREATION
+2. FILE UPLOAD
+3. FILE DOWNLOAD
+4. LIST BUCKETS
+5. LIST OBJECTS
+6. DELETE OBJECT
+7. DELETE BUCKET
+
+Prerequisites
+
+1. Python Setup
+2. boto3 library installation
+3. IAM User with Access Keys
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+s3 bucket acl
+
+In Amazon S3 (Simple Storage Service), the Access Control List (ACL) is a mechanism that allows you to manage access to your S3 buckets 
+and objects at a granular level. It defines who can perform specific actions (such as read, write, delete) on your S3 resources.
+
+An S3 bucket ACL is a set of permissions associated with a bucket that determines which AWS accounts or users have access to the bucket 
+and what actions they can perform. The ACL can be set on both the bucket level and the object level within the bucket.
+
+The S3 bucket ACL supports the following permissions:
+
+READ: Allows the grantee to list objects in the bucket and read the bucket's properties.
+WRITE: Allows the grantee to create, overwrite, and delete objects within the bucket.
+READ_ACP: Allows the grantee to read the bucket's ACL.
+WRITE_ACP: Allows the grantee to write the bucket's ACL.
+FULL_CONTROL: Allows the grantee to perform any bucket or object action.
+
+When configuring the ACL for an S3 bucket, you can specify permissions for various entities, such as AWS accounts, AWS Identity and
+Access Management (IAM) users, IAM roles, or predefined groups (e.g., AuthenticatedUsers or AllUsers). The ACL can be set using either 
+the canonical ID of an AWS account or the email address associated with an AWS account.
+
+By setting the appropriate ACL for an S3 bucket, you can control access and ensure the security and privacy of your data stored in Amazon S3.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+s3 public access
+
+AWS S3 (Simple Storage Service) public access refers to the ability for anyone on the internet to access and interact with your S3 bucket 
+and its objects without requiring any authentication or authorization.
+
+By default, when you create a new S3 bucket, it is private, meaning that only the AWS account that owns the bucket has access to it. 
+However, there are several ways in which an S3 bucket can be made publicly accessible:
+
+Bucket-Level Public Access: Public access can be granted at the bucket level through Access Control Lists (ACLs) and bucket policies.
+
+ACLs: S3 buckets have ACLs that define permissions for individual AWS accounts or predefined groups such as "AuthenticatedUsers" or "AllUsers".
+Granting read or write permissions to "AllUsers" allows public access to the bucket or its objects.
+
+Bucket Policies: Bucket policies are JSON-based policies that can be attached to an S3 bucket. You can use bucket policies to grant public access 
+to the bucket or its objects based on various conditions.
+
+Object-Level Public Access: Public access can also be granted at the object level, allowing specific objects within a bucket to be publicly accessible.
+
+Pre-Signed URLs: Pre-signed URLs are time-limited URLs that grant temporary access to specific S3 objects. They can be generated and distributed 
+to allow temporary public access to objects without granting permanent public access to the bucket.
+
+It is important to exercise caution when configuring public access to your S3 bucket. Making a bucket or its objects public means that anyone with the 
+appropriate URL can access the data. Publicly accessible S3 buckets can pose security risks if sensitive or confidential information is inadvertently exposed.

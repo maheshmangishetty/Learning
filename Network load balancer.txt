@@ -1,0 +1,47 @@
+
+A Network Load Balancer (NLB) is a load balancing service provided by Amazon Web Services (AWS) that operates at the network layer (Layer 4) of the OSI model. 
+It is designed to handle high traffic volumes and deliver extremely low-latency performance.
+
+The Network Load Balancer is capable of handling millions of requests per second while maintaining ultra-low latencies. It is particularly suitable for use cases
+that require high-throughput and low-latency traffic distribution, such as TCP and UDP-based applications.
+
+Here are some key features and characteristics of the Network Load Balancer:
+
+Layer 4 Load Balancing: 
+-----------------------
+NLB operates at the transport layer, distributing traffic based on IP protocol data. It can load balance both TCP and UDP traffic.
+
+High Performance: 
+-----------------
+The Network Load Balancer is designed to handle high volumes of traffic with low latencies. It uses a combination of flow-based and connection-based balancing 
+algorithms to efficiently distribute traffic across registered targets.
+
+Elasticity and Scalability: 
+---------------------------
+NLB automatically scales to handle varying traffic loads. You can add or remove targets from the load balancer without interrupting the existing connections.
+
+Availability and Fault Tolerance: 
+---------------------------------
+NLB automatically routes traffic only to healthy targets, ensuring high availability and fault tolerance. It performs health checks on the registered targets 
+and directs traffic only to those that pass the health checks.
+
+Static IP Addresses: 
+--------------------
+Network Load Balancers provide static IP addresses that can be associated with DNS names. This makes it easier to configure DNS records and ensures consistent 
+addressing for your applications.
+
+Support for Cross-Zone Load Balancing: 
+--------------------------------------
+NLB distributes traffic evenly across all registered targets, regardless of the Availability Zone they belong to. This improves the availability and fault 
+tolerance of your applications.
+
+Connection Draining: 
+--------------------
+NLB supports connection draining, allowing in-flight requests to complete while de-registering a target. This ensures that active connections are not abruptly 
+terminated.
+
+Network Load Balancer is commonly used for scenarios that require high-performance, low-latency load balancing, such as real-time streaming, gaming applications, 
+Voice over IP (VoIP), and other network-intensive workloads.
+
+
+

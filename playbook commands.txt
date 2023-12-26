@@ -1,0 +1,10 @@
+ansible-playbook -i inventory -l dev-s3xfer cloudwatch_agent.yml
+
+
+ansible-playbook -i inventory cloudwatch_agent.yml
+
+
+/home/psi-techops/.ssh - path to the config file
+
+/home/psi-techops   -  path to playbooks
+

@@ -1,0 +1,30 @@
+sudo yum install -y amazon-cloudwatch-agent
+
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
+
+sudo systemctl status amazon-cloudwatch-agent
+---------------------------------------------------------------
+sudo yum remove -y amazon-cloudwatch-agent
+
+
+
+
+
+
+
+The JSON configuration you've provided seems to be a part of an AWS CloudWatch Agent configuration file. This configuration specifies the log files that the CloudWatch Agent should collect and send to CloudWatch Logs. The log stream you're referring to is essentially a stream of log events within a log group. Each log group can have multiple log streams, and the CloudWatch Agent can create these log streams automatically based on the information you provide in the configuration.
+
+In the configuration you've shared, the "logs_collected" section includes a list of log files to be collected. For each log file, you've specified a "log_group_name" and a "log_stream_name".
+
+Here's what happens when the CloudWatch Agent processes this configuration:
+
+The agent will monitor the specified log files (app-1.log and error-1.log in your case) and read log events from them.
+
+It will then create log streams within the specified log group (/aws/dev/pocngma-api) based on the provided log_stream_name (i-092f8d9ff316ba458 in your case). If the log streams don't exist, the CloudWatch Agent will automatically create them.
+
+The agent will send the collected log events to the appropriate log streams in the specified log group.
+
+Log retention will be set to 5 days for these log streams.
+
+In summary, you don't need to manually create the log streams in AWS CloudWatch Logs. The CloudWatch Agent will take care of creating the log streams based on the configuration you've provided. Just ensure that the permissions are correctly set for the agent to create log streams and send log data to CloudWatch Logs.
+

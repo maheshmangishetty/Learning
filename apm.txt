@@ -1,0 +1,24 @@
+APM monitoring:
+
+Web transaction time is the amount of time it takes for a web request to be processed and a response to be returned to the user. 
+This includes all the time spent processing the request, including the time spent in the database, the application server, and the network.
+
+Web throughput is the number of web requests that can be processed per unit of time, typically measured in requests per second (RPS). 
+This metric can be used to assess the capacity of a web application to handle traffic.
+
+Apdex score is a metric that measures the overall user satisfaction with a web application. It is calculated by taking the ratio of the number of 
+satisfied requests to the total number of requests. A satisfied request is one that is completed within a certain threshold time, typically 1 second. 
+A tolerated request is one that takes longer than the threshold time but is still considered acceptable by the user, typically 4 seconds. 
+A frustrated request is one that takes longer than the tolerated threshold or results in an error.
+
+Error rate is the percentage of web requests that result in errors. This metric can be used to assess the stability of a web application.
+
+Here is a table that summarizes the key differences between these metrics:
+
+Metric	                               Definition	                                                                                        Units
+------                                 ----------                                                                                           -----
+
+Web transaction time	The amount of time it takes for a web request to be processed and a response to be returned to the user	            Seconds
+Web throughput	        The number of web requests that can be processed per unit of time	                                             Requests per second (RPS)
+Apdex score	            A measure of the overall user satisfaction with a web application	                                              Score between 0 and 1
+Error rate	            The percentage of web requests that result in errors	                                                          Percentage

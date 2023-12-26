@@ -1,0 +1,94 @@
+SFTP
+-----
+
+SFTP stands for "SSH File Transfer Protocol." It is a secure network protocol used for transferring files between a client and a server over a secure connection. 
+SFTP is based on the SSH (Secure Shell) protocol and provides a secure and encrypted method for file transfer.
+
+Here are some key features and characteristics of SFTP:
+
+Security: 
+---------
+--> SFTP ensures secure file transfer by encrypting both the authentication credentials and the data being transmitted. It uses the SSH protocol 
+for authentication and establishes a secure channel for data transfer, protecting against eavesdropping, tampering, and unauthorized access.
+
+Authentication: 
+---------------
+--> SFTP typically uses SSH key-based authentication or username/password authentication to establish a secure connection between the client and server. 
+SSH keys provide a more secure method of authentication compared to passwords.
+
+Portability: 
+------------
+--> SFTP can be used on various platforms and operating systems since it relies on the SSH protocol, which is widely supported. Clients and servers supporting
+SFTP can be found for Windows, Linux, macOS, and other operating systems.
+
+Functionality: 
+--------------
+--> SFTP offers file upload, download, directory listing, file renaming, deletion, and other file management operations. It supports both interactive and batch 
+operations, allowing scripts and automation tools to interact with remote servers programmatically.
+
+Firewall Friendliness: 
+----------------------
+--> SFTP operates over a single port (usually port 22) and uses a single connection for file transfers. This makes it firewall-friendly as it only requires a 
+single port to be open for communication.
+
+Integrity Checking: 
+-------------------
+--> SFTP supports integrity checking of transferred files using cryptographic algorithms. It can verify the integrity of files during the transfer process to 
+ensure they haven't been modified or corrupted.
+
+
+SFTP is commonly used in scenarios where secure file transfer is required, such as remote server administration, automated backup processes, secure file sharing, 
+and integration with other systems. 
+
+
+It provides a reliable and secure method for transferring files over an encrypted connection, protecting sensitive data during transit.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+what is sftp and how does it works in aws transfer family?
+
+
+SFTP (SSH File Transfer Protocol) is a secure file transfer protocol that enables secure file transfers and remote file management over a secure shell (SSH) 
+connection. It provides a secure and encrypted method for transferring files between a client and a server.
+
+In the context of AWS Transfer Family, AWS offers a fully managed SFTP service called AWS Transfer for SFTP. It allows you to create SFTP servers in the AWS cloud
+without the need to manage underlying infrastructure.
+
+Here's how AWS Transfer for SFTP works:
+
+Creating an SFTP Server: 
+------------------------
+In the AWS Management Console or through the AWS Transfer API/CLI, you can create an SFTP server. During server creation, you specify the authentication method, 
+such as password-based or SSH key-based authentication.
+
+Configuring Access: 
+-------------------
+You define the access settings for the SFTP server, including the users, their home directories, and their access permissions. You can choose to authenticate 
+users against an AWS Identity and Access Management (IAM) user database or an Active Directory.
+
+Using SFTP Clients: 
+-------------------
+Users can connect to the SFTP server using any standard SFTP client software that supports SSH connections. They provide the SFTP server's hostname, port number, 
+and their authentication credentials (username and password or SSH key).
+
+File Transfers: 
+---------------
+Once connected, users can perform file transfer operations (upload, download, delete, rename, etc.) using their SFTP client. All data transfers between the 
+client and the SFTP server are encrypted and secure.
+
+Integration with AWS Services: 
+------------------------------
+AWS Transfer for SFTP integrates with other AWS services, such as Amazon S3 and AWS CloudWatch. You can configure the SFTP server to use Amazon S3 as the 
+backend storage for file storage and leverage CloudWatch for monitoring and logging.
+
+AWS Transfer for SFTP simplifies the setup and management of SFTP servers by abstracting the underlying infrastructure. It provides a scalable, highly available, 
+and secure platform for file transfers, making it easier to migrate existing SFTP-based workflows to the AWS cloud.
+
+By using AWS Transfer for SFTP, you can leverage AWS's security, reliability, and scalability features while still using standard SFTP clients and protocols 
+for secure file transfers.
+
+
+
+
+
+

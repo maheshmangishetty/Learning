@@ -1,0 +1,24 @@
+angular     ng version
+chromium	chromium --version
+npm     	npm --version
+node    	node -v
+aws         aws --version
+git         git --version
+nuget       nuget ?
+cygwin      cygwin --version
+vault       vault --version
+powershell  pwsh --version
+amazon coretto   java -version
+maven       mvn -v
+chocolatey  choco --version
+awscli      aws --version
+winget      winget
+cygwin      uname -a
+   
+command to check .Net framework version  -       reg query "HKLM\SOFTWARE\Microsoft\Net Framework Setup\NDP" /s
+
+cat /etc/os-release
+
+
+ansible-vault decrypt vars/credentials.yaml
+ansible-vault encrypt vars/credentials.yaml

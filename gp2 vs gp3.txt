@@ -1,0 +1,61 @@
+Amazon Elastic Block Store (EBS) offers two general-purpose SSD (solid-state drive) volume types: gp2 and gp3. Both volume types are designed for a 
+wide range of workloads, including databases, boot volumes, and development environments. 
+
+However, there are some key differences between the two volume types.
+
+gp2
+---
+
+Provisioned IOPS : Up to 3,000 IOPS per 1 TiB of storage
+Throughput       : Up to 250 MiB/s per 1 TiB of storage
+Cost             : $0.085 per GB per month
+
+
+gp3
+---
+
+Provisioned IOPS : Up to 16,000 IOPS per 1 TiB of storage
+Throughput       : Up to 1,000 MiB/s per 1 TiB of storage
+Cost             : $0.067 per GB per month
+
+
+Key differences
+---------------
+
+
+--->  The key difference between gp2 and gp3 is that gp3 decouples IOPS and throughput from volume size. This means that you can provision IOPS and throughput 
+independently of the size of your volume. This is a significant advantage over gp2, which requires you to provision a larger volume to get higher IOPS 
+and throughput.
+
+--->  Another key difference is that gp3 offers a higher baseline performance than gp2. gp3 volumes provide a baseline of 3,000 IOPS and 125 MiB/s of throughput, 
+regardless of the volume size. This means that you can get good performance even with small volumes.
+
+--->  Finally, gp3 is up to 20% cheaper than gp2. This is because you can provision smaller volumes with gp3 and get the same performance as gp2.
+
+
+
+Use cases
+---------
+
+---> gp2 and gp3 are both good choices for a wide range of workloads. However, gp3 is a better choice for workloads that require high IOPS and throughput, 
+such as databases and boot volumes. gp2 is a good choice for workloads that require lower IOPS and throughput, such as development environments and file storage.
+
+---> I recommend that you use gp3 for all new workloads unless you have a specific reason to use gp2. gp3 offers better performance and lower costs than gp2. 
+If you are currently using gp2 volumes, you can migrate them to gp3 without any downtime.
+
+
+Here is a table summarizing the key differences between gp2 and gp3:
+
+Feature	                                    gp2	                                                               gp3
+-------                               -------------------------------------                           --------------------------------------
+
+Provisioned IOPS	                  Up to 3,000 IOPS per 1 TiB of storage	                          Up to 16,000 IOPS per 1 TiB of storage
+
+Throughput	                          Up to 250 MiB/s per 1 TiB of storage	                          Up to 1,000 MiB/s per 1 TiB of storage
+ 
+Cost	                              $0.085 per GB per month	                                      $0.067 per GB per month
+
+IOPS and throughput decoupled 
+from volume size	                          No	                                                           Yes
+
+Baseline performance	              100 IOPS and 125 MiB/s per 1 TiB of storage	                  3,000 IOPS and 125 MiB/s per 1 TiB of storage

@@ -1,0 +1,317 @@
+Kubernetes, often abbreviated as K8s, is an open-source container orchestration platform used for automating the deployment, scaling, and management 
+of containerized applications. It was originally developed by Google and is now maintained by the Cloud Native Computing Foundation (CNCF), 
+a part of the Linux Foundation. Kubernetes provides a powerful and flexible framework for container management and is widely adopted in the world of 
+cloud-native and containerized applications.
+
+Here are some key concepts and features of Kubernetes:
+
+Container Orchestration: 
+------------------------
+Kubernetes simplifies the management of containerized applications by automating tasks such as deployment, scaling, load balancing, and rolling updates.
+
+Containers: 
+-----------
+Kubernetes primarily works with containerized applications. Containers are lightweight, portable, and isolated environments that package an application 
+and its dependencies, making it easy to deploy and run consistently across different environments.
+
+Nodes: 
+------
+Kubernetes clusters consist of nodes, which are physical or virtual machines that run container workloads. Each node can host one or more containers.
+
+Pods: 
+-----
+The smallest deployable unit in Kubernetes is a Pod, which can contain one or more containers. Containers within the same Pod share the same network 
+namespace and storage volume, making it easier for them to communicate and share data.
+
+Services: 
+---------
+Kubernetes provides networking capabilities to expose applications running in Pods to the external world or to other services within the cluster. 
+Services can be used for load balancing and service discovery.
+
+ReplicaSets: 
+------------
+A ReplicaSet ensures that a specified number of Pod replicas are running at all times. It helps with scaling applications up or down based on demand.
+
+Deployments: 
+------------
+Deployments are higher-level abstractions that manage the desired state of an application. They can perform rolling updates and rollbacks, making 
+application updates safer and more controlled.
+
+ConfigMaps and Secrets: 
+-----------------------
+Kubernetes provides mechanisms for managing configuration data (ConfigMaps) and sensitive information (Secrets) separately from application code, 
+improving security and flexibility.
+
+Persistent Volumes (PVs) and Persistent Volume Claims (PVCs): 
+-------------------------------------------------------------
+Kubernetes allows for the management of persistent storage, enabling applications to store and retrieve data even if containers are rescheduled to different nodes.
+
+Namespace: 
+----------
+Namespaces provide a way to logically partition a Kubernetes cluster, allowing multiple teams or applications to share the same cluster while maintaining 
+isolation and resource quotas.
+
+Custom Resource Definitions (CRDs): 
+-----------------------------------
+Kubernetes can be extended with custom resources using CRDs. This allows users to define and manage their own resources beyond the built-in ones.
+
+
+
+Kubernetes has become the de facto standard for container orchestration in the cloud-native ecosystem. It abstracts away much of the complexity associated
+with managing containerized applications, making it easier to build, deploy, and scale applications in a consistent and reliable manner across various 
+infrastructure environments, including on-premises data centers and public cloud platforms.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+container orchestration
+-----------------------
+
+Container orchestration refers to the automated management of containerized applications, specifically the coordination of various tasks and resources 
+required to deploy, scale, monitor, and maintain container instances. Containers are a lightweight and portable way to package applications and their dependencies, 
+and container orchestration platforms help streamline the deployment and management of these containers in a distributed computing environment.
+
+Here are some key aspects of container orchestration:
+
+Deployment: 
+-----------
+Orchestration platforms automate the deployment of containerized applications, ensuring that containers are started on appropriate host machines within a cluster.
+
+Scaling: 
+--------
+Container orchestration enables automatic scaling of applications by adding or removing container instances based on factors like resource utilization or 
+traffic load. This helps in maintaining optimal application performance and resource utilization.
+
+Load Balancing: 
+---------------
+Orchestration platforms typically include load balancing mechanisms to distribute incoming traffic across multiple containers running the same application, 
+ensuring high availability and even distribution of requests.
+
+Self-Healing: 
+-------------
+Orchestration platforms monitor container health and can automatically replace or reschedule containers that fail or become unresponsive, improving application 
+reliability.
+
+Rolling Updates and Rollbacks: 
+------------------------------
+Container orchestration allows for seamless rolling updates of applications. It can gradually replace old container instances with new ones, reducing downtime. 
+In case of issues, it supports easy rollbacks to a previous version.
+
+Resource Management: 
+--------------------
+Orchestration platforms manage resource allocation for containers, ensuring that each container gets its fair share of CPU, memory, and other resources, 
+preventing resource contention.
+
+Service Discovery: 
+------------------
+Containerized applications often need to discover and communicate with other services within the cluster. Orchestration platforms provide service discovery 
+mechanisms to facilitate this.
+
+Secrets and Configuration Management: 
+-------------------------------------
+Handling sensitive information like API keys and managing application configurations are essential aspects of orchestration. Platforms typically offer 
+solutions for secrets and configuration management.
+
+Storage Management: 
+-------------------
+Orchestration platforms can manage storage volumes for containers, including the ability to provision, attach, and detach persistent volumes as needed 
+by applications.
+
+Networking: 
+-----------
+Container orchestration platforms handle networking between containers and external services, ensuring that containers can communicate with each other 
+and the outside world.
+
+Security: 
+---------
+Security is a critical concern in containerized environments. Orchestration platforms often include security features such as role-based access control (RBAC), 
+network policies, and container image scanning to enhance security.
+
+Popular container orchestration platforms include Kubernetes, Docker Swarm, and Apache Mesos. Kubernetes has emerged as the leading and most widely adopted 
+container orchestration solution, offering a robust set of features and a large ecosystem of tools and extensions.
+
+Container orchestration simplifies the management of containerized applications, making it easier to deploy and scale applications, improve reliability, 
+and streamline operations in complex, distributed environments, such as cloud computing and microservices architectures.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Kubernetes Architecture
+-----------------------
+
+Kubernetes has a multi-layered architecture designed to provide a scalable and flexible container orchestration platform. Understanding its architecture is 
+essential for effectively deploying and managing containerized applications. The key components of the Kubernetes architecture are:
+
+1. Master Node:
+---------------
+
+API Server: 
+-----------
+The Kubernetes API server is the entry point for all administrative tasks and user interactions with the cluster. It exposes the Kubernetes API and acts 
+as the control plane component for managing the cluster.
+
+etcd: 
+-----
+etcd is a distributed key-value store that serves as Kubernetes' backing store for all cluster data, including configuration settings, metadata, and cluster state. 
+It provides consistency and high availability for critical data.
+
+Controller Manager: 
+-------------------
+The controller manager component manages various controllers that regulate the state of the system. Controllers ensure that the desired state of resources 
+(e.g., Pods, Services) matches the current state.
+
+
+Scheduler: 
+----------
+The scheduler component is responsible for assigning work (Pods) to worker nodes based on resource requirements, constraints, and policies. It takes into 
+account factors like node capacity and affinity/anti-affinity rules.
+
+Cloud Controller Manager (optional): 
+------------------------------------
+If Kubernetes is running on a cloud platform, this component interacts with the cloud provider's APIs to manage resources like load balancers, storage volumes, 
+and virtual machines.
+
+
+2. Node (Worker Node):
+----------------------
+
+Kubelet: 
+--------
+The Kubelet is an agent that runs on each node in the cluster. It is responsible for maintaining the state of nodes, ensuring that containers are running in Pods, 
+and reporting node status to the control plane.
+
+Container Runtime: 
+------------------
+Kubernetes supports various container runtimes, such as Docker, containerd, and CRI-O, which actually run the containers within Pods.
+
+Kube Proxy: 
+-----------
+Kube Proxy is responsible for network routing on the worker nodes. It maintains network rules and enables communication to and from Pods.
+
+Pods: 
+-----
+Pods are the smallest deployable units in Kubernetes. They can contain one or more containers that share the same network namespace and storage volumes. 
+Containers within the same Pod can communicate with each other using localhost.
+
+
+3.Add-Ons (Optional):
+---------------------
+
+DNS: 
+----
+Kubernetes can deploy a DNS add-on to provide DNS-based service discovery within the cluster. This allows services to be accessed by their DNS names.
+
+Dashboard: 
+----------
+Kubernetes Dashboard is a web-based graphical user interface for managing and monitoring the cluster.
+
+Ingress Controllers: 
+--------------------
+Ingress controllers provide external access to services within the cluster. They manage external traffic routing and load balancing.
+
+Monitoring and Logging: 
+-----------------------
+Kubernetes can be integrated with various monitoring and logging solutions like Prometheus, Grafana, and Elasticsearch to collect and analyze cluster metrics 
+and application logs.
+
+Networking Plugins: 
+-------------------
+Kubernetes supports various networking plugins, such as Calico, Flannel, and Cilium, which enable network communication between Pods and external networks.
+
+The architecture of a Kubernetes cluster allows for scalability, high availability, and fault tolerance. It separates the control plane components (master node) 
+from the worker nodes, making it possible to add or remove worker nodes to accommodate changes in workload and ensuring that the control plane remains highly 
+available.
+
+Overall, Kubernetes' modular and extensible architecture provides a solid foundation for deploying and managing containerized applications in a dynamic and 
+efficient manner.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Kuberenetes
+-----------
+
+What is Kubernetes?
+-------------------
+• Kubernetes, also known as "K8s", is an open-source
+container orchestration platform developed by
+Google.
+
+• It is designed to automate the deployment, scaling,
+and management of containerized applications across
+a cluster of nodes.
+
+• Kubernetes provides a consistent and reliable way to
+manage applications, regardless of whether they are
+running on-premises, in the cloud, or in hybrid
+environments.
+
+pods?
+-----
+A pod is the smallest execution unit in Kubernetes. A pod encapsulates one or more applications. 
+Pods are ephemeral by nature, 
+if a pod (or the node it executes on) fails, 
+Kubernetes can automatically create a new replica of that pod to continue operations.
+allowing our customers to conveniently store and access their belongings right in their driveway.
+
+-kubectl run nginx --image=nginx(create a pod with name nginx)
+-kubectl get pods (shows number of pods created)
+-kubectl describe pod podname(detail description of pods)
+-kubectl get nodes(provides details of how many nodes are there)
+-kubectl get pods -o wide(gives additional information)
+-kubectl delete pod podname(delete pod)
+-kubectl run redis --image=redis123 --dry-run-client -o yaml(redis is name of pod ; redis123 is image name)
+-kubectl create -f redis.yaml(to create redis.yaml file)
+
+Yaml:
+-----
+YAML is a human-friendly language. In the context of Kubernetes, YAML files are mainly used for the 
+configuration of K8 pods, services, and deployments. In Kubernetes, YAML is a manifest file,
+which performs the functions mentioned above.They dictate how a pod should run,interact with other objects,and more.
+
+Yaml format:
+------------
+apiVersion: v1
+kind: Pod
+metadata:
+  creation Timestamp: null
+  Labels:
+    run: redis
+  name: redis
+spec:
+  containers:
+  - image: redis123
+    name: redis
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Introduction: Perfect! You have successfully created a Kubernetes-Definition file. Let us try it one more time, this time all on your own! 
+
+Instruction: Create a Kubernetes Pod definition file using values below: 
+
+Name: postgres 
+Labels: tier => db-tier
+Container name: postgres
+Image: postgres
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    tier: db-tier
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+
+

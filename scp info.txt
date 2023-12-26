@@ -1,0 +1,19 @@
+
+
+command to copy files from local machine to remote desktop
+----------------------------------------------------------
+scp -i techops.dev.svc.ssh.pem  pem.zip techops.dev.svc@10.151.144.71:/c:/docker
+
+
+
+command for copying files from the docker container to local machine
+--------------------------------------------------------------------
+docker cp <containerId>:/file/path/within/container /host/path/target
+
+
+
+
+docker cp <containerId>:/file/path/within/container c:/docker
+
+
+docker cp       c:/develop-827771/CenterOPS2.0_API-develop-V4.1.1.827772.zip   c:/docker  

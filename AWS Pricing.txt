@@ -1,0 +1,199 @@
+Introduction
+-------------
+
+--> AWS offers many services with a unique billing model.
+--> AWS is truly on-demand and offers a pay-per-use solution.
+--> Overwhelming amount of customization options for each service.
+--> Each service requires in-depth knowledge.
+--> AWS has data centers across the globe adding more complexity.
+
+
+
+Pricing foundation
+-------------------
+
+--> It’s important to understand account billing prior to registration.
+--> A compromised account can be a very costly issue.
+--> Without proper controls you can incur unexpected usage charges.
+--> AWS offers customers a high level of freedom and control over their
+account.
+--> This flexibility can come with consequences.
+--> Make sure to understand AWS best practices and billing
+methodology behind each service you use.
+
+
+
+--> AWS works on a pay-per-use pricing model. You pay for the resources you use on each billing cycle, which is typically monthly.
+
+--> To keep it simple, resources refer to things like storage, computational power (CPU), Ram, and outbound data transfer(bandwidth).
+
+--> You pay less by using more. AWS offers volume based discounts as your usage of resources increases for specific services. For examples
+AWS S3 storage and data transfer Out from an EC2 virtual server offers a tiered pricing model. The illustration below shows the
+change in price per GB of data stored on $3, as the usage increases.
+
+S3
+
+upto 50 TB / Month	$0.023 per GB
+Next 51 - 100 TB / Month $0.022 per GB
+Over 500 TB / Month	$0.021 per GB
+
+
+
+EC2
+
+--> You save when you reserve. You can save up to 75% on cost when you commit to using a consistent amount of resources from AWS. This form of pricing 
+entails a longer commitment, which can be structured in three different ways:
+
+> All up-front (AURI)
+> partial up-front (PURI)
+> no upfront payments (NURI)
+
+
+When you buy reserve instances the larger the upfront payment the greater the discount. To maximize the savings, you can pay all up-front and 
+receive the largest discount.
+partial up-fronts gets lower discount 
+no up-front receives smaller discount.
+
+
+Resources can be reserved for 1 0r 3 year terms.
+
+
+Example:
+
+1 Year no up-front
+
+EC2m4.large
+
+$955/year -  on demand
+$650/year - NURI        
+
+32 % savings
+
+
+
+1 Year partial up-front
+
+EC2m4.large
+
+$955/year - on demand
+$554/year - PURI
+
+42 % savings
+
+
+1 Year all up-front
+
+EC2m4.large
+
+$955/year - on demand
+$545/year - AURI
+
+43 % savings
+
+
+
+Free Tier Overview
+------------------
+
+AWS Free-Tier is perfect for:
+
+--> Those interested in learning how to use AWS without having to incur expense.
+--> Developers looking to test small applications on a scalable cloud platform.
+--> Anyone new to AWS looking to take advantage of a great service while saving on usage fees for the first year.
+
+
+AWS Free-Tier caution:
+
+--> It's important to stay within the usage limits to avoid charges.
+--> We will setup billing alerts to notify us if our account exceeds a specified threshold.
+
+
+
+750 hours on an EC2 t2.micro or t3.micro instance
+--> We can see the specification of each EC2 instance type at the link below:
+https://aws.amazon.com/ec2/instance-types/    
+
+--> We can see here that t2.micro instances include 1vCPU, 2GB of memory(RAM).
+
+750 Hours usage of a db.t2.micro database. This includes:
+--> 20GB of General Purpose (SSD) Database Storage
+--> 20GB of storage for database backups and DB snapshots.
+
+5GB of Standard Storage ($3)
+5GB of Amazon Elastic File Storage (EFS)
+30GB of Amazon Elastic Block Storage (EBS)
+
+Data Transfer-in is always free, so you can migrate as much data to AWS
+Priester Roel RM Rr coUn ine Kelstol keer
+
+The AWS Free Tier allows 1 GB per month of data transfer out.
+
+
+
+
+AWS Global vs Regional services
+-------------------------------
+
+Global services
+
+IAM
+Amazon S3
+AWS Direct connect
+Amazon Route 53
+Amazon Cloud Front
+AWS WAF & shield
+AWS Artifact
+AWS Trusted Advisor
+AWS Personal Health Dashboard
+
+
+
+Regional services
+
+EC2, ECS, lambda, LightSail
+EBS, EFS, AWS Storage Gateway
+Amazon VPC
+RDS,DynamoDB,Redshift,ElastiCache
+ELB, Auto Scaling
+CloudWatch, Cloudtrail
+Amazon SNS
+Database Migration Service
+Server Migration Service
+AWS snowball
+AWS GuardDuty, AWS KMS, AWS CloudHSM, AWS inspector, AWS config, AWS service catalog
+
+
+
+--> AWS operates clusters of data centers in different physical locations around the world, these are known as regions.
+
+--> AWS offers an interactive map which shows each of its regions and availability zones across the world.
+
+This resource can be found by visiting this link
+https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+
+
+
+Availability Zone:
+
+--> Each logical grouping of data centers within a localized region is called an Availability Zone.
+
+--> Each AZ has independent power, cooling, and physical security and is connected via redundant, ultra-low-latency networks.
+
+--> This segregation of AZ's within each geographic region helps ensure that disruptions in one data center do not affect the other.
+
+
+
+AWS Local Zones:
+
+--> Allows infrastructure deployment from geographic locations that are in closest proximity to end users, which offers single-digit millisecond
+latency to maximize application deliverability and efficiency.
+
+--> You can deploy AWS compute, storage, database, and other select services in close proximity to large populations, industry, and IT centers.
+
+--> AWS Local zones are generally available in Los Angeles, with plans to extend the offering to Boston, Houston, and Miami.
+
+
+
+AWS Services By Region:
+
+https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4

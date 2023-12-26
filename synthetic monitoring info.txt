@@ -1,0 +1,88 @@
+
+Synthetic monitoring in New Relic is a way to proactively test your applications and infrastructure from outside your network. 
+This can help you to identify and resolve performance issues before they impact your users.
+
+New Relic offers a variety of synthetic monitoring features, including:
+
+HTTP checks: These checks can be used to test the availability and performance of your web applications.
+
+Script checks: These checks can be used to test the functionality of your applications by running custom scripts.
+
+Certificate checks: These checks can be used to verify that the SSL certificates on your websites are valid.
+
+Synthetic browser testing: This feature allows you to simulate real user interactions with your web applications.
+
+Synthetic monitoring can be used to monitor your applications and infrastructure from multiple locations around the world. 
+This can help you to identify performance issues that may be specific to certain regions or users.
+
+New Relic also offers a variety of features for alerting on synthetic monitoring failures. This can help you to be notified of performance issues 
+as soon as they occur, so that you can take corrective action quickly.
+
+Overall, synthetic monitoring is a valuable tool for proactively monitoring your applications and infrastructure and identifying performance issues 
+before they impact your users.
+
+Here are some of the benefits of using synthetic monitoring in New Relic:
+
+Proactive monitoring: 
+---------------------
+Synthetic monitoring allows you to test your applications and infrastructure from outside your network, which can help you to identify performance issues 
+before they impact your users.
+
+Global coverage: 
+-----------------
+New Relic offers synthetic monitoring from multiple locations around the world, which can help you to identify performance issues that may be 
+specific to certain regions or users.
+
+Alerting: 
+---------
+New Relic allows you to set up alerts on synthetic monitoring failures, so that you can be notified as soon as they occur.
+
+Integrations: 
+-------------
+New Relic integrates with a variety of other tools, which can help you to streamline your monitoring workflow.
+
+If you are looking for a way to proactively monitor your applications and infrastructure, synthetic monitoring in New Relic is a good option to consider.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Private locations in synthetic monitoring
+
+
+In the context of synthetic monitoring, a private location refers to a monitoring point or agent that is set up within a private network or environment, 
+typically behind a company's firewall. This private location is used to perform synthetic monitoring tests to evaluate the availability, performance, 
+and functionality of web applications or services from within the organization's internal network.
+
+Private locations are used for several purposes:
+
+Internal Performance Monitoring: 
+--------------------------------
+Private locations allow organizations to assess the performance of their applications or services as experienced by internal users.
+This can help identify performance issues that may be specific to the organization's network or infrastructure.
+
+Security and Compliance: 
+------------------------
+Organizations can use private locations to monitor their applications or services from within their secure, private networks, ensuring that 
+sensitive data and transactions are protected while still being monitored for performance and availability.
+
+Testing for Restricted Environments: 
+------------------------------------
+Some applications or services may be designed to work only within specific network environments. Private locations can be set up to test these 
+services in the same network conditions where they are expected to be used.
+
+Synthetic User Experience Testing: 
+----------------------------------
+Private locations can simulate user interactions within an organization's network, helping to assess the user experience under various scenarios.
+
+To set up private locations for synthetic monitoring, organizations typically install monitoring agents or nodes within their internal infrastructure. 
+These agents can be configured to periodically access and interact with specific web applications or services, generating synthetic traffic that simulates 
+real user interactions. The data collected from private locations is then used to analyze and optimize the performance and availability of the 
+monitored applications.
+
+It's important to note that private locations are just one part of a comprehensive synthetic monitoring strategy, which may also include public locations 
+(testing from external servers or cloud providers) to gauge performance and availability from a broader perspective, encompassing external users and various 
+geographical regions.
+
+
+

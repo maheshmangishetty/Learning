@@ -1,0 +1,47 @@
+cicd vars
+
+GIT_DEPTH: 0: This variable likely controls the depth of the Git clone operation. When set to 0, it means a full clone of the repository will be performed, 
+fetching all commit history and branches.
+
+GIT_STRATEGY: clone: This variable specifies the Git strategy to be used. In this case, it's set to "clone," which means the repository will be cloned 
+from its source location.
+
+GIT_FETCH_EXTRA_FLAGS: -f --tags --prune --update-head-ok: These flags are additional options to pass to the git fetch command. Here's what each flag means:
+
+-f: Forces the fetch operation, even if it's not a fast-forward update.
+--tags: Fetches all tags from the remote repository.
+--prune: Removes any remote tracking references that no longer exist on the remote repository.
+--update-head-ok: Allows git fetch to update the remote-tracking branch even if the update is not a fast-forward.
+These variables together define how the Git repository will be fetched and used in the given environment. The specific use case and how these variables 
+are used might depend on the context, such as a CI/CD pipeline configuration or a build script.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+interruptible: true
+  only:
+    refs:
+      - merge_requests
+      - pushes
+      - tags
+      - web
+
+interruptible: true: This setting likely controls whether the pipeline is interruptible or not. When set to true, it means the pipeline can be interrupted 
+or canceled during its execution. This can be useful in scenarios where you want to allow manual intervention to stop a pipeline run if necessary.
+
+only: This section seems to specify the conditions under which the pipeline should be triggered and run. In this case, it looks like the pipeline will be 
+triggered for the following events:
+
+merge_requests: Pipeline will run when there are new merge requests.
+pushes: Pipeline will run when there are new code pushes to the repository.
+tags: Pipeline will run when new tags are added to the repository.
+web: It's not entirely clear from the provided snippet what web refers to, but it might indicate that the pipeline can also be triggered through a web 
+interface or HTTP request.
+In summary, the configuration defines an interruptible pipeline that will be triggered and run for specific events, such as merge requests, code pushes, 
+tag additions, and potentially through a web interface. The actual behavior and actions performed by the pipeline will depend on the implementation and the 
+specific commands defined within the pipeline configuration.
+
+
+
+
+
+
